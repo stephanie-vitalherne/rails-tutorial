@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  resources :articles
   get '/write' => 'articles#new'
   get 'articles/edit'
   get 'articles/show'
