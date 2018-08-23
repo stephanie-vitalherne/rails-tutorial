@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  get 'articles/new'
+  get '/write' => 'articles#new'
   get 'articles/edit'
   get 'articles/show'
   get 'articles/index'
