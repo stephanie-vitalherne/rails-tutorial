@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = 2
     if @article.save
       p 'article saved!'
       redirect_to @article
