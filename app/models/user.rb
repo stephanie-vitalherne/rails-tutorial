@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+  before_save { self.email = email.downcase } # this line changes the email that was entered by the user to change case so that its always the same in the database for everyone
   has_one_attached :photo
   has_many :articles
   has_secure_password
   validates :password, presence: true
+  validates :email, presence: true, length: { maximum: 100 }
 
   def full_name
     first_name + ' ' + last_name
