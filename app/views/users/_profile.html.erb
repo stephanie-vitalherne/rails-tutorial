@@ -1,0 +1,11 @@
+<p><%= @user.bio %></p>
+
+<% unless @user.articles.empty? %>
+  <h4> Articles written by <%= @user.full_name %> </h4>
+
+  <% @user.articles.each do |a| %>
+    <%= link_to "#{a.title}", a %> <br>
+  <% end %>
+  <% else %>
+  <h4><%= @user.first_name %> hasn't written any articles yet.</h4>
+<% end %>
