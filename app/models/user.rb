@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :articles
   has_secure_password
-  validates :password, presence: true
+  validates :password, presence: true, length: { maximum: 32, minimum: 8 }
   validates :email, presence: true, length: { maximum: 100 }
 
   def full_name

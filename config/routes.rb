@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  get 'register' => 'users#new'
+  get '/register' => 'users#new'
   get 'users/edit'
   get 'users/show'
   get 'users/index'
