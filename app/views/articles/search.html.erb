@@ -1,0 +1,6 @@
+<h1>Search Articles</h1>
+
+<%= form_tag('/search', method: 'get') do %>
+  <%= text_field_tag(:q) %> &nbsp
+  <%= submit_tag("Search") %>
+<% end %>

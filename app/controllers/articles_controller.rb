@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    # POST /articles
     @article = Article.new(article_params)
     @article.user_id = 2
     if @article.save
@@ -15,24 +16,29 @@ class ArticlesController < ApplicationController
       p @article.errors.messages
       render 'new'
   end
-
-    def edit; end
-
-    def update
-      if @article.update(article_params)
-        p 'Article successfully updated'
-        redirect_to @article
-      else
-        render 'edit'
-      end
-    end
-
-    def show; end
-
-    def index
-      @articles = Article.all.order('CREATED_AT DESC')
-    end
 end
+
+  def edit; end
+
+  def update
+    if @article.update(article_params)
+      p 'Article successfully updated'
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def show; end
+
+  def index
+    # GET /articles
+    @articles = Article.all.order('CREATED_AT DESC')
+  end
+
+  def search; end
+
+  def tagged; end
 
   private
 
