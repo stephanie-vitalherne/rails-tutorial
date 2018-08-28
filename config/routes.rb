@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # this is the login route
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   get '/write' => 'articles#new'
   get 'articles/edit'
