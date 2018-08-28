@@ -38,7 +38,9 @@ end
 
   def search; end
 
-  def results; end
+  def results
+    @results = params[:q]
+  end
 
   private
 
