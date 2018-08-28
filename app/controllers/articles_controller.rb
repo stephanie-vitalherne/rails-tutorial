@@ -52,7 +52,9 @@ end
     matches.each do |match|
       Article.all.each do |_article|
         x = Article.where(title: match)
-        @final_results << x
+        x.each do |y|
+          @final_results << y
+        end
       end
     end
   end
