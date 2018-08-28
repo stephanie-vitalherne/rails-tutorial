@@ -40,13 +40,20 @@ end
 
   def results
     @results = params[:q]
-    search_words = params[:q].split(' ')
+    p params[:date_submitted]
+
+    if params[:terms].to_i != 1
+      p 'User did not agree :/'
+      render 'search'
+    end
+
+    search_words = params[:q].downcase.split(' ')
     titles = Article.pluck(:title)
     matches = []
     @final_results = []
     search_words.each do |word|
       titles.each do |t|
-        matches << t if t.include?(word)
+        matches << t if t.downcase.include?(word)
       end
     end
     matches.each do |match|
@@ -57,6 +64,7 @@ end
         end
       end
     end
+    @final_results.uniq!
   end
 
   private
