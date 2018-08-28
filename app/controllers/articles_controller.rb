@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
   def create
     # POST /articles
     @article = Article.new(article_params)
-    @article.user_id = 2
+    @article.user_id = current_user.id
+    @article.author = current_user.full_name
     if @article.save
       p 'article saved!'
       redirect_to @article
