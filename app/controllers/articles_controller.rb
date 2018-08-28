@@ -40,6 +40,21 @@ end
 
   def results
     @results = params[:q]
+    search_words = params[:q].split(' ')
+    titles = Article.pluck(:title)
+    matches = []
+    @final_results = []
+    search_words.each do |word|
+      titles.each do |t|
+        matches << t if t.include?(word)
+      end
+    end
+    matches.each do |match|
+      Article.all.each do |_article|
+        x = Article.where(title: match)
+        @final_results << x
+      end
+    end
   end
 
   private
