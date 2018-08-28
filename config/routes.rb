@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'articles/show'
   get 'articles/index'
   get '/search' => 'articles#search'
-  get '/tagged' => 'articles#tagged'
+  get '/results' => 'articles#results'
   # get 'pages/home' # this is rewritten on line 2
   get 'pages/about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

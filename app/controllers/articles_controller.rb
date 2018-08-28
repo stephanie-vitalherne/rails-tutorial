@@ -38,7 +38,7 @@ end
 
   def search; end
 
-  def tagged; end
+  def results; end
 
   private
 
