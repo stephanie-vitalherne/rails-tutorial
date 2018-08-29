@@ -1,5 +1,5 @@
 <ul>
-  <li><%= link_to "Register", register_path %></li>
+  <li><%= link_to "Register", register_path if current_user.nil? %></li>
   <li><%= link_to "Articles", articles_path %></li>
   <li><%= link_to "Write an Article", write_path %></li>
   <li><%= link_to "Search", search_path %></li>
