@@ -1,0 +1,13 @@
+Employees -> (user account)
+
+Company.rb
+- name
+- industry
+
+Departments
+company_id
+has_many :employees (users)
+
+
+
+after all the of the addition, the code is able to search by email and employee id number
