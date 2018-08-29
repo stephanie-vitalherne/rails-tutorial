@@ -10,7 +10,7 @@ class DepartmentsController < ApplicationController
     @dept.company_id = @company.id
     if @dept.save
       msgg = "New Department created! Let's get you some employees"
-      redirect_to @dept
+      redirect_to company_department_path(@dept.company_id, @dept.id)
     else
       render 'new'
     end
@@ -18,7 +18,9 @@ class DepartmentsController < ApplicationController
 
   def edit; end
 
-  def show; end
+  def show
+    @dept = Department.find(params[:id])
+  end
 
   def index; end
 
@@ -27,4 +29,6 @@ class DepartmentsController < ApplicationController
   def dept_params
     params.require(:department).permit(:name)
   end
+
+  def find_dept; end
 end
