@@ -1,2 +1,5 @@
 <h1><%= @company.name %></h1>
 <p><%= @company.industry %></p>
+
+<h3>Your Departments</h3>
+<%= link_to 'Create a Department', new_company_department_path(@company.id) %>

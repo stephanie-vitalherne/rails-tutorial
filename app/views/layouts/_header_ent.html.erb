@@ -1,0 +1,6 @@
+<ul>
+  <li><%= link_to "HOme", root_path%></li>
+  <% if logged_in? %>
+  <li><%= link_to "#{current_user.email}", "#" %></li>
+  <li><%= link_to "#{current_user.email}", "#" %></li>
+</ul>
