@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  get 'new-company' => 'companies#new'
+  get 'companies/edit'
+  get 'companies/show'
+  get 'companies/index'
+
   get '/register' => 'users#new'
   get 'users/edit'
   get 'users/show'
   get 'users/index'
 
+  resources :companies
   resources :users
   resources :articles
 
