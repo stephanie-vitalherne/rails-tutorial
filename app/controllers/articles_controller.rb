@@ -50,22 +50,22 @@ end
 
     search_words = params[:q].downcase.split(' ')
     titles = Article.pluck(:title)
-    matches = []
+    # matches = []
     @final_results = []
-    search_words.each do |word|
-      titles.each do |t|
-        matches << t if t.downcase.include?(word)
-      end
-    end
-    matches.each do |match|
+    # search_words.each do |word|
+    #   titles.each do |t|
+    #     matches << t if t.downcase.include?(word)
+    #   end
+    # end
+    titles.each do |_match|
       Article.all.each do |_article|
-        x = Article.where(title: match)
+        x = Article.where(title: search_words)
         x.each do |y|
           @final_results << y
         end
       end
     end
-    @final_results.uniq!
+    @final_results
   end
 
   private
