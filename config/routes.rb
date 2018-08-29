@@ -13,14 +13,22 @@ Rails.application.routes.draw do
 
   resources :companies do
     resources :departments
+    resources :employees
   end
+
   resources :users
   resources :articles
 
   get 'new-company' => 'companies#new'
+  get 'mycompanies' => 'companies#index'
   get 'companies/edit'
   get 'companies/show'
-  get 'companies/index'
+
+  get 'employees/new'
+  get 'employees/edit'
+  get 'employees/show'
+  get 'employees/index'
+
   # this is the login route
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

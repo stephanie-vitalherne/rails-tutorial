@@ -2,5 +2,3 @@
 <h3>Employee #<%= @user.eid %></h3>
 <%= @user.photo.attachment.nil? ? "User has no photo" : image_tag(@user.photo, size: '200x150') %>
 <p> You can reach <%= @user.first_name %> at <%= @user.email %>!</p>
-
-<%= render 'profile' %>

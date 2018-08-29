@@ -1,0 +1,15 @@
+<h1>Create an Employee</h1>
+<%= form_for(@company, @employee) do |f| %>
+<label>First Name</label>
+  <%= f.text_field :first_name %> <br>
+  <label>Last Name</label>
+  <%= f.text_field :last_name %> <br>
+    <label>Email</label>
+  <%= f.email_field :email %> @<%= @company.name.tr(' ','').downcase %>.com <br>
+
+<%= f.collection_select :department_id, @depts, :id, :name, { include_blank: true } %>
+
+<p>
+  <%= f.submit 'Create Employee' %>
+</p>
+<% end %>

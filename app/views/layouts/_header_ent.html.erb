@@ -2,5 +2,11 @@
   <li><%= link_to "HOme", root_path%></li>
   <% if logged_in? %>
   <li><%= link_to "#{current_user.email}", "#" %></li>
-  <li><%= link_to "#{current_user.email}", "#" %></li>
+  <li><%= link_to "Create Company", new_company_path %></li>
+  <li><%= link_to "Log Out", logout_path, method :delete %></li>
+  <% else %>
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Register', register_path %></li>
+  <li><%= link_to 'Login', login_path %></li>
+  <% end %>
 </ul>
