@@ -1,8 +1,8 @@
 class CompaniesController < ApplicationController
   before_action :find_company, only: %i[show edit]
+
   def new
     @company = Company.new
-    @depts = Department.where(company_id: @company.id)
   end
 
   def create

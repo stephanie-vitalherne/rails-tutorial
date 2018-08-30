@@ -11,7 +11,7 @@ class User < ApplicationRecord
   end
 
   def generate_eid
-    self.eid = SecureRandom.uuid.hex(3).upcase
+    self.eid = SecureRandom.uuid.hex
   end
 
   # SAVE THIS PRECIOUS GEM
