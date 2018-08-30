@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  get 'departments/new'
-  get 'departments/edit'
-  get 'departments/show'
-  get 'departments/index'
-
   get '/register' => 'users#new'
   get 'users/edit'
   get 'users/show'
@@ -29,6 +24,10 @@ Rails.application.routes.draw do
   get 'employees/show'
   get 'employees/index'
 
+  get 'departments/new'
+  get 'departments/edit'
+  get 'departments/show'
+  get 'departments/index'
   # this is the login route
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -40,7 +39,6 @@ Rails.application.routes.draw do
   get 'articles/index'
   get '/search' => 'articles#search'
   get '/results' => 'articles#results'
-  # get 'pages/home' # this is rewritten on line 2
   get 'pages/about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

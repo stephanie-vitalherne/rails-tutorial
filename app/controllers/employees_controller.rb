@@ -2,6 +2,7 @@ class EmployeesController < ApplicationController
   before_action :find_employee, only: %i[new create]
   def new
     @employee = Employee.new
+    @depts = Department.where(company_id: @company_id)
   end
 
   def create
@@ -17,6 +18,8 @@ class EmployeesController < ApplicationController
     p msg
   end
 
+  def edit; end
+
   def show; end
 
   def index; end
@@ -28,6 +31,6 @@ class EmployeesController < ApplicationController
   end
 
   def find_employee
-    @company = Employee.find(params[:company_id])
+    @company = Company.find(params[:company_id])
   end
 end

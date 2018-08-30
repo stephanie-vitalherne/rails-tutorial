@@ -1,6 +1,10 @@
 <h1>New Department for <%= @company.name %></h1>
 
 <%= form_for([@company, @dept]) do |f| %>
-  <%= f.text_field :name, placeholder: "Department Name" %>
-  <%= f.submit "Submit" %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %>
+
+  <p>
+  <%= f.submit "Create Department" %>
+</p>
 <% end %>

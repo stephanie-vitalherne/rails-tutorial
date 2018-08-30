@@ -1,5 +1,3 @@
-<% unless flash.empty? %>
-  <div>
-    <%= flash[:notice] %>
-  </div>
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
 <% end %>
