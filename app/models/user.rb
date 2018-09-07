@@ -10,6 +10,10 @@ class User < ApplicationRecord
     first_name + ' ' + last_name
   end
 
+  def generate_eid
+    self.eid = SecureRandom.uuid.hex
+  end
+
   # SAVE THIS PRECIOUS GEM
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

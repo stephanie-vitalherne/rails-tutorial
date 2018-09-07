@@ -1,4 +1,4 @@
-<h1>Register as a Writer</h1>
+<h1>Create An Employee</h1>
 
 
 <%= form_for(@user) do |f| %>
@@ -7,7 +7,7 @@
   <%= f.email_field :email, placeholder: 'Enter your email', required: true %> <br>
 
   <%= f.password_field :password, placeholder: 'Create a Password', required: true %> <br>
-  <%= f.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %> <br>
+  <% f.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %> <br>
 
   <%= f.label :photo, 'Upload a photo' %> <br>
   <%= f.file_field :photo %> <br>

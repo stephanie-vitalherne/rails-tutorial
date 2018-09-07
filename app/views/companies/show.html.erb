@@ -1,0 +1,11 @@
+<h1><%= @company.name %></h1>
+<p><%= @company.industry %></p>
+
+<h3>Your Departments</h3>
+
+<% @company.departments.each do |dept|  %>
+  <h5><%= link_to "#{dept.name}", company_department_path(@company.id, dept.id) %></h5>
+<% end %>
+<hr>
+<%= link_to 'Create a Department', new_company_department_path(@company.id) %>
+<%= link_to 'Add an employees', new_company_employee_path(@company.id) %>
